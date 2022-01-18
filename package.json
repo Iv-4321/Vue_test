@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
+    "pdfvuer": "^1.9.2",
     "routers": "^0.1.4",
     "vue": "^2.6.11",
     "vue-pdf": "^4.3.0",
@@ -17,6 +18,7 @@
     "vuetify": "^2.6.2"
   },
   "devDependencies": {
+    "@iconify/vue2": "^1.1.2",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
@@ -28,7 +30,9 @@
     "sass-loader": "^10.0.0",
     "vue-cli-plugin-vuetify": "~2.4.5",
     "vue-template-compiler": "^2.6.11",
-    "vuetify-loader": "^1.7.0"
+    "vuetify-loader": "^1.7.0",
+    "webpack-bundle-tracker": "^1.4.0",
+    "write-file-webpack-plugin": "^4.5.1"
   },
   "eslintConfig": {
     "root": true,

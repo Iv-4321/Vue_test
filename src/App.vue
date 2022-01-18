@@ -1,55 +1,55 @@
 <template>
-    <v-app>
-        <v-col lg>
-            <v-card>
-                <v-card-title>
-                    Книжная полка
-                </v-card-title>
-                <v-row>
-                    <v-col>
-                        <v-select v-model="book"
-                                  :items="books"
-                                  item-text="name"
-                                  item-value="genre"
-                                  label="Book name"
-                                  prepend-icon="mdi-book-search"
-                                  filled>
-                        </v-select>
-                    </v-col>
-                </v-row>
-                <v-divider></v-divider>
-                <v-card-text>
-                    <v-list-item v-for="book in books" :key="book.id" >
-                        <v-list-item-avatar>
-                            <img :src="book.picture" fluid />
-                            <pdf src="book.pdf"></pdf>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                            <v-list-item-title>
+  <div id="app">
+    <div id="nav">
 
-                                <h5 class="text-h5">{{book.name}}</h5>
-                            </v-list-item-title>
-                            <v-list-item-subtitle>
-                                <b>{{book.author}}</b>
-                            </v-list-item-subtitle>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                            <v-btn icon>
+        <v-bottom-navigation>
+            <router-link to="/"
+                         tag="v-btn">
+                <v-btn>
+                    <span>Home</span>
+                    <v-icon>mdi-home-circle-outline</v-icon>
+                </v-btn>
+            </router-link>
+            <router-link to="/auth"
+                         tag="v-btn">
+                <v-btn>
+                    <span>Sign In</span>
+                    <v-icon>mdi-login</v-icon>
+                </v-btn>
+            </router-link>
+            <router-link to="/Registr"
+                         tag="v-btn">
+                <v-btn>
+                    <span>Registr</span>
+                    <v-icon>mdi-account-plus-outline</v-icon>
+                </v-btn>
+            </router-link>
+            <router-link to="/Search"
+                         tag="v-btn">
+                <v-btn>
+                    <span>Search</span>
+                    <v-icon>mdi-layers-search-outline</v-icon>
+                </v-btn>
+            </router-link>
+            <router-link to="/Loading"
+                         tag="v-btn">
+                <v-btn>
+                    <span>Loading</span>
+                    <v-icon>mdi-database-export-outline</v-icon>
+                </v-btn>
+            </router-link>
 
-                                <v-btn @click.prevent="getpdf(book.pdf)" id='button' cssClass='e-small'> Читать книгу </v-btn>
+        </v-bottom-navigation>
+    </div>
+    <router-view/>
+  </div>
 
-                                <v-icon>mdi-book-open-blank-variant</v-icon>
-                            </v-btn>
-                        </v-list-item-action>
-                    </v-list-item>
-                </v-card-text>
-            </v-card>
-        </v-col>
-    </v-app>
 </template>
 
 <script>
     import axios from 'axios'
+
+
 
     export default {
         name: "Books",
@@ -84,10 +84,3 @@
 }
 </script>
 
-import pdf from 'vue-pdf'
-
-export default {
-  components: {
-    pdf
-  }
-}
